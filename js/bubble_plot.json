@@ -1,0 +1,44 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 500,
+    "height": 400,
+    "title": "Birth Rates and Fertility Rates",
+    "data": {
+        "url": "data/Global Population Trends(2016-2022).csv"
+    },"transform": [{
+        "filter":"datum.Birth_Rate>0"
+    }]
+    ,
+   
+    "mark": "circle",
+    "encoding": {
+        "x": {
+            "field": "Birth_Rate",
+            "type": "quantitative",
+            "title": "Birth Rate"
+        },
+        "y": {
+            "field": "Fertility Rate",
+            "type": "quantitative",
+            "title": "Fertility Rate"
+        },
+        "color": {
+            "field": "Country",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "Total_Population",
+            "type": "quantitative",
+            "scale": {
+                "type": "threshold",
+                "domain": [
+                    1000000,
+                    100000000,
+                    500000000,
+                    1000000000,
+                    1500000000
+                ]
+            }
+        }
+    }
+}
