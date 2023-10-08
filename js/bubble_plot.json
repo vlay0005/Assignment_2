@@ -4,12 +4,13 @@
     "height": 400,
     "title": "Birth Rates and Fertility Rates",
     "data": {
-        "url": "data/Global Population Trends(2016-2022).csv"
-    },"transform": [{
-        "filter":"datum.Birth_Rate>0"
-    }]
-    ,
-   
+        "url": "https://raw.githubusercontent.com/vlay0005/Assignment_2/main/data/Global%20Population%20Trends(2016-2022).csv"
+    },
+    "transform": [
+        {
+            "filter": "datum.Birth_Rate>0"
+        }
+    ],
     "mark": "circle",
     "encoding": {
         "x": {
@@ -39,6 +40,51 @@
                     1500000000
                 ]
             }
-        }
+        },
+        "layer": [
+            {
+                "mark": {
+                    "type": "circle",
+                    "opacity": 0.4,
+                    "size": 15
+                }
+            },
+            {
+                "transform": [
+                    {
+                        "window": [
+                            {
+                                "op": "rank",
+                                "as": "ranking"
+                            }
+                        ],
+                        "sort": [
+                            {
+                                "field": "Total_Population",
+                                "order": "descending"
+                            }
+                        ]
+                    },
+                    {
+                        "filter": "datum.ranking == 1"
+                    },
+                    {
+                        "calculate": "'The'",
+                        "as": "text_annotation_raw"
+                    }
+                ],
+                "mark": {
+                    "type": "text",
+                    "align": "right",
+                    "baseline": "middle",
+                    "fontStyle": "italic"
+                },
+                "encoding": {
+                    "text": {
+                        "field": "text_annotation_raw"
+                    }
+                }
+            }
+        ]
     }
 }
