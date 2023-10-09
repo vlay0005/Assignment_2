@@ -1,4 +1,4 @@
-ID,Country,Year,Total_Population,Urban Population,Rural Population,Population Density,Life Expectancy,Birth_Rate,Death Rate,Fertility_Rate,Infant Mortality Rate,Growth Rate
+ID,Country,Year,Total_Population,Urban Population,Rural Population,Population_Density,Life Expectancy,Birth_Rate,Death Rate,Fertility_Rate,Infant Mortality Rate,Growth Rate
 1,Afghanistan,2017,0,0,0,55,63,37.34,7.03,5.13,49.4,0
 2,Afghanistan,2018,36686784,9353296,27333488,56,63,36.93,6.98,5,47.8,3
 3,Afghanistan,2019,37769499,9727157,28042342,58,64,36.47,6.79,4.87,46.3,3
