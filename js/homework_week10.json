@@ -275,7 +275,7 @@
                     }
                 },
                 {
-                    "mark": "rule",
+                    "mark": {"type": "rule", "strokeDash": [4, 4], "size": 3},
                     "transform": [
                         {
                             "filter": "datum.Year == Filter_Year"
@@ -291,9 +291,6 @@
                         },
                         "size": {
                             "value": 4
-                        },
-                        "strokeDash": {
-                            "field": "mean", "type": "nominal"
                         }
                     }
                 }

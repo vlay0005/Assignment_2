@@ -1,0 +1,42 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 500,
+    "height": 400,
+    "title": "Death Rates per 1000 People for the Most and Least Populated Countries",
+    "data": {
+        "url": "https://raw.githubusercontent.com/vlay0005/Assignment_2/main/data/Global%20Population%20Trends(2016-2022).csv"
+    },
+    "transform": [
+        {"filter": "datum.Year == 2020"}
+    ],
+    "mark": "rect",
+    "encoding": {
+        "color": {
+            "field": "Country",
+            "type": "nominal"
+        },
+        "tooltip": [
+            {
+                "field": "Country",
+                "type": "nominal"
+            },
+            {
+                "field": "Population Density",
+                "type": "quantitative"
+            },
+            {
+                "field": "Total_Population",
+                "type": "quantitative"
+            }
+        ],
+        "size": {
+            "field": "Population Density",
+            "type": "quantitative"
+        },
+        "order": {
+            "field": "Population Density",
+            "type": "quantitative",
+            "sort": "descending"
+        }
+    }
+}
