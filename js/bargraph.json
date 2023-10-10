@@ -1,11 +1,28 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "params": [
+        {
+            "name": "Filter_Year",
+            "value": [
+                2021
+            ],
+            "bind": {
+                "input": "range",
+                "min": 2018,
+                "max": 2021,
+                "step": 1,
+                "name": "Year:"
+            }
+        }
+    ],
     "width": 500,
     "height": 400,
     "title": "Life Expectancy for the Most and Least Populated Countries",
     "data": {
         "url": "https://raw.githubusercontent.com/vlay0005/Assignment_2/main/data/Global%20Population%20Trends(2016-2022).csv"
     },
+    "layer": [
+        {
     "transform": [
         {
             "filter": {
@@ -23,6 +40,9 @@
                     "United States"
                 ]
             }
+        },
+        {
+            "filter": "datum.Year == Filter_Year"
         }
     ],
     "mark": "bar",
@@ -57,25 +77,35 @@
                 "title": "Life Expectancy"
             }
         ]
-    },
-    {
-        "mark": "rule",
-        "transform": [
-            {
-                "filter": "datum.Year == Filter_Year"
-            }
+    }
+},
+{
+    "mark": {
+        "type": "rule",
+        "strokeDash": [
+            4,
+            4
         ],
-        "encoding": {
-            "y": {
-                "aggregate": "mean",
-                "field": "Life Expectancy"
-            },
-            "color": {
-                "value": "blue"
-            },
-            "size": {
-                "value": 4
-            }
+        "size": 3
+    },
+    "transform": [
+        {
+            "filter": "datum.Year == Filter_Year"
+        }
+    ],
+    "encoding": {
+        "y": {
+            "aggregate": "mean",
+            "field": "Life Expectancy",
+            "title": "Life Expectancy"
+        },
+        "color": {
+            "value": "blue"
+        },
+        "size": {
+            "value": 4
         }
     }
 }
+    ]
+} 

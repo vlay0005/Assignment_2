@@ -6,9 +6,7 @@
     "data": {
         "url": "https://raw.githubusercontent.com/vlay0005/Assignment_2/main/data/Global%20Population%20Trends(2016-2022).csv"
     },
-    "transform": [
-        {"filter": "datum.Year == 2020"}
-    ],
+
     "mark": "rect",
     "encoding": {
         "color": {
@@ -21,7 +19,7 @@
                 "type": "nominal"
             },
             {
-                "field": "Population Density",
+                "field": "Population_Density",
                 "type": "quantitative"
             },
             {
@@ -29,6 +27,7 @@
                 "type": "quantitative"
             }
         ],
+        "x": {"field": "Country", "type":"nominal"},
         "size": {
             "field": "Population Density",
             "type": "quantitative"

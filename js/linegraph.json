@@ -25,7 +25,7 @@
             }
         }
     ],
-    "mark": "line",
+    "mark": {"type": "line", "point": true},
     "encoding": {
         "x": {
             "field": "Year",
