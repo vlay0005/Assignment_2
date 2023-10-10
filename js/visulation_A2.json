@@ -15,11 +15,18 @@
             }
         }
     ],
+    "title": {
+        "text": "World Population",
+        "fontSize": 80
+    },
     "concat": [
         {
-            "width": 800,
+            "width": 600,
             "height": 400,
-            "title": "Global Population over Time",
+            "title": {
+                "text": "Global Population over Time",
+                "fontSize": 25
+            },
             "projection": {
                 "type": "equalEarth"
             },
@@ -160,7 +167,8 @@
         {
             "width": 600,
             "height": 400,
-            "title": "Birth Rates per 1000 People and Fertility Rates for the Most and Least Populated Countries",
+            "title": {"text": "Birth Rates per 1000 People and Fertility Rates for the Most and Least Populated Countries",
+            "fontSize": "25"},
             "data": {
                 "url": "https://raw.githubusercontent.com/vlay0005/Assignment_2/main/data/Global%20Population%20Trends(2016-2022).csv"
             },
@@ -310,15 +318,18 @@
                         "dy": -2,
                         "x": "width",
                         "text": "Global Average of Births",
-                        "size": 16
+                        "size": 14
                     }
                 }
             ]
         },
         {
-            "width": 800,
+            "width": 600,
             "height": 400,
-            "title": "Life Expectancy for the Most and Least Populated Countries",
+            "title": {
+                "text": "Life Expectancy for the Most and Least Populated Countries",
+                "fontSize": 25
+            },
             "data": {
                 "url": "https://raw.githubusercontent.com/vlay0005/Assignment_2/main/data/Global%20Population%20Trends(2016-2022).csv"
             },
@@ -407,13 +418,28 @@
                             "value": 4
                         }
                     }
+                },
+                {
+                    "mark": {
+                        "type": "text",
+                        "align": "center",
+                        "baseline": "top",
+                        "dx": -300,
+                        "dy": -170,
+                        "x": "width",
+                        "text": "Global Average Life Expectancy",
+                        "size": 14
+                    }
                 }
             ]
         },
         {
             "width": 600,
             "height": 400,
-            "title": "Death Rates per 1000 People for the Most and Least Populated Countries",
+            "title": {
+                "text": "Death Rates per 1000 People for the Most and Least Populated Countries",
+                "fontSize": 25
+            },
             "data": {
                 "url": "https://raw.githubusercontent.com/vlay0005/Assignment_2/main/data/Global%20Population%20Trends(2016-2022).csv"
             },
