@@ -280,6 +280,13 @@
                                 "title": "Fertility Rate"
                             }
                         ]
+                    },
+                    "selection": {
+                        "hover": {
+                            "type": "single",
+                            "nearest": true,
+                            "on": "mouseover"
+                        }
                     }
                 },
                 {
@@ -366,7 +373,12 @@
                         "y": {
                             "field": "Life Expectancy",
                             "type": "quantitative",
-                            "scale": {"domain": [0,90]} 
+                            "scale": {
+                                "domain": [
+                                    0,
+                                    90
+                                ]
+                            }
                         },
                         "color": {
                             "field": "Country",
@@ -487,6 +499,12 @@
                         "title": "Country"
                     },
                     {
+                        "field": "Total_Population",
+                        "type": "quantitative",
+                        "title": "Total Population",
+                        "format": ","
+                    },
+                    {
                         "field": "Year",
                         "type": "ordinal",
                         "title": "Year"
@@ -495,11 +513,6 @@
                         "field": "Death Rate",
                         "type": "quantitative",
                         "title": "Death Rate"
-                    },
-                    {
-                        "field": "Total_Population",
-                        "type": "quantitative",
-                        "title": "Total Population"
                     }
                 ]
             }
