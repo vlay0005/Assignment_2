@@ -53,7 +53,8 @@
         },
         "y": {
             "field": "Life Expectancy",
-            "type": "quantitative"
+            "type": "quantitative",
+            "scale": {"domain": [0,90]}
         },
         "color": {
             "field": "Country",

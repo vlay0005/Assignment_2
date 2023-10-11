@@ -17,7 +17,8 @@
     ],
     "title": {
         "text": "World Population",
-        "fontSize": 80
+        "anchor": "middle",
+        "fontSize": 70
     },
     "concat": [
         {
@@ -348,7 +349,7 @@
                                     "Pakistan",
                                     "St. Martin (French Part)",
                                     "Tuvalu",
-                                    "United States"
+                                    "United States of America"
                                 ]
                             }
                         },
@@ -364,7 +365,8 @@
                         },
                         "y": {
                             "field": "Life Expectancy",
-                            "type": "quantitative"
+                            "type": "quantitative",
+                            "scale": {"domain": [0,90]} 
                         },
                         "color": {
                             "field": "Country",
@@ -424,7 +426,7 @@
                         "align": "center",
                         "baseline": "top",
                         "dx": -300,
-                        "dy": -170,
+                        "dy": -140,
                         "x": "width",
                         "text": "Global Average Life Expectancy",
                         "size": 14
@@ -456,7 +458,7 @@
                             "Pakistan",
                             "St. Martin (French Part)",
                             "Tuvalu",
-                            "United States"
+                            "United States of America"
                         ]
                     }
                 }
