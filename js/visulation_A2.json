@@ -118,28 +118,25 @@
                             "type": "quantitative",
                             "title": "Total Population",
                             "scale": {
-                                "type": "linear",
+                                "type": "threshold",
                                 "range": [
-                                    "#efedf5",
+                                    "#f2f0f7",
                                     "#dadaeb",
                                     "#bcbddc",
                                     "#9e9ac8",
                                     "#807dba",
-                                    "#6a51a3",
-                                    "#54278f",
-                                    "#3f007d"
+                                    "#6a51a3"
                                 ],
                                 "domain": [
-                                    0,
-                                    700000,
-                                    20000000,
-                                    50000000,
-                                    90000000,
-                                    150000000,
-                                    500000000,
-                                    750000000,
-                                    1500000000
+                                    200000,
+                                    10000000,
+                                    75000000,
+                                    200000000,
+                                    800000000
                                 ]
+                            },
+                            "legend": {
+                                "format": ".1s"
                             }
                         },
                         "tooltip": [
@@ -167,8 +164,10 @@
         {
             "width": 600,
             "height": 400,
-            "title": {"text": "Birth Rates per 1000 People and Fertility Rates for the Most and Least Populated Countries",
-            "fontSize": "25"},
+            "title": {
+                "text": "Birth Rates per 1000 People and Fertility Rates for the Most and Least Populated Countries",
+                "fontSize": 25
+            },
             "data": {
                 "url": "https://raw.githubusercontent.com/vlay0005/Assignment_2/main/data/Global%20Population%20Trends(2016-2022).csv"
             },
@@ -314,7 +313,7 @@
                         "type": "text",
                         "align": "right",
                         "baseline": "bottom",
-                        "dx": -25,
+                        "dx": -50,
                         "dy": -2,
                         "x": "width",
                         "text": "Global Average of Births",

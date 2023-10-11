@@ -67,7 +67,7 @@
                     ],
                     "mark": {
                         "type": "geoshape",
-                        "fill": "lightgray"
+                        "fill": "#bdbdbd"
                     },
                     "encoding": {
                         "tooltip": {
@@ -111,29 +111,24 @@
                             "type": "quantitative",
                             "title": "Total Population",
                             "scale": {
-                                "type": "linear",
+                                "type": "threshold",
                                 "range": [
-                                    "#efedf5",
                                     "#dadaeb",
                                     "#bcbddc",
                                     "#9e9ac8",
-                                    "#807dba",
-                                    "#6a51a3",
+                                    "#756bb1", 
                                     "#54278f",
-                                    "#3f007d"
+                                    "#4a1486"
                                 ],
                                 "domain": [
-                                    0,
-                                    700000,
-                                    20000000,
-                                    50000000,
-                                    90000000,
-                                    150000000,
-                                    500000000,
-                                    750000000,
-                                    1500000000
+                                    200000,
+                                    10000000,
+                                    75000000,
+                                    200000000,
+                                    800000000
                                 ]
-                            }
+                            },
+                            "legend": {"format": ".1s"}
                         },
                         "tooltip": [
                             {
