@@ -9,9 +9,6 @@
             "height": 370,
             "title": {
                 "text": "Life Expectancy",
-                "subtitle": "in 2021",
-                "subtitleFontSize": 18,
-                "subtitleFont": "Rockwell",
                 "fontSize": 25,
                 "font": "Rockwell"
             },

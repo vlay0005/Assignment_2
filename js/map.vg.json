@@ -5,10 +5,7 @@
     "title": {
         "text": "Global Population",
         "fontSize": 25,
-        "font": "Rockwell",
-        "subtitle": "Over Time",
-        "subtitleFont": "Rockwell",
-        "subtitleFontSize": 18
+        "font": "Rockwell"
     },
     "projection": {
         "type": "equalEarth"
