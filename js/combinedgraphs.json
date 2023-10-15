@@ -150,7 +150,7 @@
                 "text": "Death Rates",
                 "fontSize": 25,
                 "font": "Rockwell",
-                "subtitle": "per 100 People",
+                "subtitle": "per 1000 People",
                 "subtitleFont": "Rockwell",
                 "subtitleFontSize": 18
             },
