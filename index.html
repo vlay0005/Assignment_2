@@ -1,27 +1,103 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
-  <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.5.0"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
-  
-  <!-- CSS file -->
-  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+    <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.5.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
 
-  
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
+        integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="all">
+
+    <script type="text/javascript">
+        var spec1 = "js/map.vg.json";
+        vegaEmbed('#graph1', spec1, { "actions": false }).then(function (result) {
+        }).catch(console.error);
+
+        var spec2 = "js/combinedgraphs.json";
+        vegaEmbed('#graph2', spec2, { "actions": false }).then(function (result) {
+        }).catch(console.error);
+
+    </script>
+
+    <style>
+        .custom-column1 {
+            width: 14%;
+            box-sizing: border-box;
+            /* Include padding in width calculation */
+            padding-left: 5px;
+            /* Add padding to the columns */
+        }
+
+        .custom-column2 {
+            width: 70%;
+            /* Include padding in width calculation */
+            /* Add padding to the columns */
+        }
+
+        .custom-column3 {
+            width: 16%;
+            /* Add padding to the columns */
+        }
+    </style>
+
 </head>
+
 <body>
-  
-<div id="choropleth_map"></div>
+    <div class="page">
+        <div class="pure-g">
+            <div class="pure-u-1">
+                <h1 class="heading_format">Exploring Global Population in 2021</h1>
+                <h2 class="heading_format">for the Most and Least Populated Countries</h2>
+            </div>
 
-<script type="text/javascript">
+            <div class="pure-u-1-3 custom-column1">
+                <h3>
+                    Background Information
+                </h3>
+                <p> Over time the main trend for the total world population is a postive trend, where the global
+                    population is continuously increasing. It increases by about 83 million people per year. However, it is beleived that as the years continue, the total
+                    world population will be increasing at a slower rate or even reaching its peak. This is an interesting 
+                    and potentially surprising fact.
+                </p>
+                <p>
+                    In 2021, the approximated total population reached nearly 8 billion. 
+                </p>
+            </div>
 
-  var spec2 = "js/visulation_A2.json";
-  vegaEmbed('#choropleth_map', spec2).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
-</script>
+            <div class="pure-u-1-3 custom-column2">
+                <div id="graph1" class="vis-container"></div>
+            </div>
+
+            <div class="pure-u-1-3 custom-column3">
+                <h3>
+                    Visualisation Information
+                </h3>
+                <p>
+                    From the map, it can be seen that countries all have different population numbers, therefore they all contribute to
+                    the global population differently.
+                </p>
+                <p>
+                    This visualisation explores how aspects like life expectancy, death, birth and
+                    fertility rates differ between the most and least populated countries. It explores 
+                    if the differences in those aspects could explain why there is a difference in population numbers.
+                    It also looks into if there are certain trends between the most populated countries and trends between
+                    the least populated countries. 
+                </p>
+            </div>
+
+
+
+            <div class="pure-u-1-3">
+                <div id="graph2" class="vis-container"></div>
+            </div>
+
+        </div>
+    </div>
 
 </body>
+
 </html>
