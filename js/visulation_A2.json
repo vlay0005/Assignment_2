@@ -285,6 +285,10 @@
                                 "field": "Fertility_Rate",
                                 "type": "quantitative",
                                 "title": "Fertility Rate"
+                            },
+                            {
+                                "field": "label",
+                                "type": "nominal"
                             }
                         ]
                     },

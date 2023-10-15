@@ -102,6 +102,28 @@
                 },
                 {
                     "mark": {
+                        "type": "text",
+                        "size": 12,
+                        "font": "Rockwell"
+                    },
+                    "encoding": {
+                        "x": {
+                            "value": 160
+                        },
+                        "y": {
+                            "value": 15
+                        },
+                        "color":{"value":"black"},
+                        "text": {
+                            "value": [
+                                "The least populated countries have three",
+                                "countries greater than the global average"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "mark": {
                         "type": "rule",
                         "strokeDash": [
                             4,
@@ -433,11 +455,65 @@
                         ]
                     },
                     "selection": {
+                        "hover": {
+                            "type": "single",
+                            "nearest": true,
+                            "on": "mouseover"
+                        },
                         "click": {
                             "encodings": [
                                 "color"
                             ],
                             "type": "multi"
+                        }
+                    }
+                },
+                {
+                    "mark": {
+                        "type": "text",
+                        "size": 12,
+                        "font": "Rockwell"
+                    },
+                    "encoding": {
+                        "x": {
+                            "value": 295
+                        },
+                        "y": {
+                            "value": 10
+                        },
+                        "color":{"value":"black"},
+                        "text": {
+                            "value": [
+                                "A most and least",
+                                "populated country",
+                                "has the",
+                                "highest birth",
+                                "and fertility rate"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "mark": {
+                        "type": "text",
+                        "size": 12,
+                        "font": "Rockwell"
+                    },
+                    "encoding": {
+                        "x": {
+                            "value": 120
+                        },
+                        "y": {
+                            "value": 300
+                        },
+                        "color":{"value":"black"},
+                        "text": {
+                            "value": [
+                                "Despite being the most populated",
+                                "country, China has birth", 
+                                "and fertility rates similar",
+                                "to a least populated country"
+                            ]
                         }
                     }
                 },
