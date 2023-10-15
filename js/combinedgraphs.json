@@ -110,7 +110,7 @@
                         "y": {
                             "value": 15
                         },
-                        "color":{"value":"black"},
+                        "color":{"value":"#636363"},
                         "text": {
                             "value": [
                                 "The least populated countries have three",
@@ -269,7 +269,7 @@
                         "y": {
                             "value": 250
                         },
-                        "color":{"value":"black"},
+                        "color":{"value":"#636363"},
                         "text": {
                             "value": [
                                 "Lowest death rate despite",
@@ -291,7 +291,7 @@
                         "y": {
                             "value": 190
                         },
-                        "color":{"value": "black"},
+                        "color":{"value":"#636363"},
                         "text": {
                             "value": [
                                 "For a lot of countries",
@@ -313,7 +313,7 @@
                         "y": {
                             "value": 20
                         },
-                        "color":{"value": "black"},
+                        "color":{"value": "#636363"},
                         "text": {
                             "value": [
                                 "A most populated and a least populated country",
@@ -478,7 +478,7 @@
                         "y": {
                             "value": 10
                         },
-                        "color":{"value":"black"},
+                        "color":{"value":"#636363"},
                         "text": {
                             "value": [
                                 "A most and least",
@@ -503,7 +503,7 @@
                         "y": {
                             "value": 300
                         },
-                        "color":{"value":"black"},
+                        "color":{"value":"#636363"},
                         "text": {
                             "value": [
                                 "Despite being the most populated",
