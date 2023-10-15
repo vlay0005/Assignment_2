@@ -1,6 +1,6 @@
 #choropleth_map {
-	top:1px;
-	bottom: 100px; 
+	top: 1px;
+	bottom: 100px;
 	align-self: center;
 	/*height: 1000px;
 	width: 800px;*/
@@ -20,18 +20,19 @@
 }
 
 .heading_format {
-	margin: 0; 
+	margin: 0;
 	padding: 1;
-  }
+}
 
 h1 {
 	text-align: center;
 	color: black;
 	font-size: 60px;
 	font-family: "Elephant";
+	padding-top: 20px;
 }
 
-h2 { 
+h2 {
 	text-align: center;
 	color: black;
 	font-size: 30px;
@@ -58,25 +59,23 @@ p {
 	margin: auto;
 }
 
-        .custom-column1 {
-            width: 15%;
-            box-sizing: border-box;
-            /* Include padding in width calculation */
-            padding-left: 5px;
-            /* Add padding to the columns */
-        }
+.custom-column1 {
+	width: 15%;
+	box-sizing: border-box;
+	padding-left: 5px;
+}
 
-        .custom-column2 {
-            width: 70%;
-            /* Include padding in width calculation */
-            /* Add padding to the columns */
-        }
+.custom-column2 {
+	width: 70%;
+}
 
-        .custom-column3 {
-            width: 15%;
-            /* Add padding to the columns */
-        }
+.custom-column3 {
+	width: 15%;
+}
 
+body {
+	background-color: lightgrey;
+}
 
 .vis-container {
 	width: 100%;
