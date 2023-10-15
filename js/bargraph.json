@@ -1,20 +1,5 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "params": [
-        {
-            "name": "Filter_Year",
-            "value": [
-                2021
-            ],
-            "bind": {
-                "input": "range",
-                "min": 2018,
-                "max": 2021,
-                "step": 1,
-                "name": "Year:"
-            }
-        }
-    ],
     "width": 500,
     "height": 400,
     "title": "Life Expectancy for the Most and Least Populated Countries",
@@ -23,90 +8,119 @@
     },
     "layer": [
         {
-    "transform": [
-        {
-            "filter": {
-                "field": "Country",
-                "oneOf": [
-                    "British Virgin Islands",
-                    "China",
-                    "Gibraltar",
-                    "India",
-                    "Indonesia",
-                    "Nauru",
-                    "Pakistan",
-                    "St. Martin (French Part)",
-                    "Tuvalu",
-                    "United States"
+            "transform": [
+                {
+                    "filter": {
+                        "field": "Country",
+                        "oneOf": [
+                            "British Virgin Islands",
+                            "China",
+                            "Gibraltar",
+                            "India",
+                            "Indonesia",
+                            "Nauru",
+                            "Pakistan",
+                            "St. Martin (French Part)",
+                            "Tuvalu",
+                            "United States"
+                        ]
+                    }
+                },
+                {
+                    "filter": "datum.Year == 2021"
+                }
+            ],
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "Country",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "Life Expectancy",
+                    "type": "quantitative",
+                    "scale": {
+                        "domain": [
+                            0,
+                            90
+                        ]
+                    }
+                },
+                "color": {
+                    "condition": {
+                        "selection": "click",
+                        "field": "Country",
+                        "type": "nominal"
+                    },
+                    "value": "lightgrey"
+                },
+                "tooltip": [
+                    {
+                        "field": "Country",
+                        "type": "nominal",
+                        "title": "Country"
+                    },
+                    {
+                        "field": "Total_Population",
+                        "type": "ordinal",
+                        "title": "Population",
+                        "format": ","
+                    },
+                    {
+                        "field": "Life Expectancy",
+                        "type": "quantitative",
+                        "title": "Life Expectancy"
+                    }
                 ]
+            },
+            "selection": {
+                "click": {
+                    "encodings": [
+                        "color"
+                    ],
+                    "type": "multi"
+                }
             }
         },
         {
-            "filter": "datum.Year == Filter_Year"
-        }
-    ],
-    "mark": "bar",
-    "encoding": {
-        "x": {
-            "field": "Country",
-            "type": "nominal"
-        },
-        "y": {
-            "field": "Life Expectancy",
-            "type": "quantitative",
-            "scale": {"domain": [0,90]}
-        },
-        "color": {
-            "field": "Country",
-            "type": "nominal"
-        },
-        "tooltip": [
-            {
-                "field": "Country",
-                "type": "nominal",
-                "title": "Country"
+            "mark": {
+                "type": "rule",
+                "strokeDash": [
+                    4,
+                    4
+                ],
+                "size": 10
             },
-            {
-                "field": "Total_Population",
-                "type": "ordinal",
-                "title": "Population",
-                "format": ","
-            },
-            {
-                "field": "Life Expectancy",
-                "type": "quantitative",
-                "title": "Life Expectancy"
+            "transform": [
+                {
+                    "filter": "datum.Year == 2021"
+                }
+            ],
+            "encoding": {
+                "y": {
+                    "aggregate": "mean",
+                    "field": "Life Expectancy",
+                    "title": "Life Expectancy"
+                },
+                "color": {
+                    "value": "blue"
+                },
+                "size": {
+                    "value": 4
+                }
             }
-        ]
-    }
-},
-{
-    "mark": {
-        "type": "rule",
-        "strokeDash": [
-            4,
-            4
-        ],
-        "size": 3
-    },
-    "transform": [
+        },
         {
-            "filter": "datum.Year == Filter_Year"
+            "mark": {
+                "type": "text",
+                "align": "right",
+                "baseline": "bottom",
+                "dx": -300,
+                "dy": -80,
+                "x": "width",
+                "text": "Global Average of Births",
+                "size": 14
+            }
         }
-    ],
-    "encoding": {
-        "y": {
-            "aggregate": "mean",
-            "field": "Life Expectancy",
-            "title": "Life Expectancy"
-        },
-        "color": {
-            "value": "blue"
-        },
-        "size": {
-            "value": 4
-        }
-    }
-}
     ]
-} 
+}

@@ -1,8 +1,73 @@
 #choropleth_map {
 	top:100px;
 	bottom: 100px; 
-	left: 100px;
-	right: 100px;
+	align-self: center;
 	/*height: 1000px;
 	width: 800px;*/
+}
+
+.pure-u-1 img {
+	width: 90vw;
+}
+
+.pure-u-1-2 img {
+	margin-top: 30px;
+	width: 30vw;
+	height: 30vw;
+}
+
+.pure-u-1-3 img {
+	width: 30vw;
+	height: 30vw;
+	
+}
+
+.pure-u-1-3 {
+	margin-top: 30px;
+	height: 30vw;
+	margin-bottom: 90px;
+
+}
+
+.heading_format {
+	margin: 0; 
+	padding: 1;
+  }
+
+h1 {
+	text-align: center;
+	color: black;
+	font-size: 60px;
+	font-family: "Elephant";
+}
+
+h2 { 
+	text-align: center;
+	color: black;
+	font-size: 30px;
+	font-family: "Elephant";
+}
+
+h3 {
+	text-align: center;
+	color: black;
+	font-size: 18px;
+	font-family: "Rockwell";
+}
+
+p {
+	text-align: center;
+	size: 14px;
+	font-family: "Rockwell";
+}
+
+.page {
+	width: 1400px;
+	background-color: white;
+	margin: auto;
+}
+
+
+.vis-container {
+	width: 100%;
 }

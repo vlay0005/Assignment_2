@@ -1,0 +1,482 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+        "url": "https://raw.githubusercontent.com/vlay0005/Assignment_2/main/data/Global%20Population%20Trends(2016-2022).csv"
+    },
+    "hconcat": [
+        {
+            "width": 355,
+            "height": 370,
+            "title": {
+                "text": "Life Expectancy",
+                "subtitle": "in 2021",
+                "subtitleFontSize": 18,
+                "subtitleFont": "Rockwell",
+                "fontSize": 25,
+                "font": "Rockwell"
+            },
+            "data": {
+                "url": "https://raw.githubusercontent.com/vlay0005/Assignment_2/main/data/Global%20Population%20Trends(2016-2022).csv"
+            },
+            "layer": [
+                {
+                    "transform": [
+                        {
+                            "filter": {
+                                "field": "Country",
+                                "oneOf": [
+                                    "British Virgin Islands",
+                                    "China",
+                                    "Gibraltar",
+                                    "India",
+                                    "Indonesia",
+                                    "Nauru",
+                                    "Pakistan",
+                                    "St. Martin (French Part)",
+                                    "Tuvalu",
+                                    "United States"
+                                ]
+                            }
+                        },
+                        {
+                            "filter": "datum.Year == 2021"
+                        }
+                    ],
+                    "mark": "bar",
+                    "encoding": {
+                        "x": {
+                            "field": "Country",
+                            "type": "nominal",
+                            "axis": {
+                                "title": "Country",
+                                "labels": false,
+                                "labelFont": "Rockwell"
+                            }
+                        },
+                        "y": {
+                            "field": "Life Expectancy",
+                            "type": "quantitative",
+                            "scale": {
+                                "domain": [
+                                    0,
+                                    90
+                                ]
+                            },
+                            "axis": {"labelFont": "Rockwell"}
+                        },
+                        "color": {
+                            "condition": {
+                                "selection": "click",
+                                "field": "Country",
+                                "type": "nominal"
+                            },
+                            "value": "lightgrey"
+                        },
+                        "tooltip": [
+                            {
+                                "field": "Country",
+                                "type": "nominal",
+                                "title": "Country"
+                            },
+                            {
+                                "field": "Total_Population",
+                                "type": "ordinal",
+                                "title": "Population",
+                                "format": ","
+                            },
+                            {
+                                "field": "Life Expectancy",
+                                "type": "quantitative",
+                                "title": "Life Expectancy"
+                            }
+                        ]
+                    },
+                    "selection": {
+                        "click": {
+                            "encodings": [
+                                "color"
+                            ],
+                            "type": "multi"
+                        }
+                    }
+                },
+                {
+                    "mark": {
+                        "type": "rule",
+                        "strokeDash": [
+                            4,
+                            4
+                        ],
+                        "size": 3
+                    },
+                    "transform": [
+                        {
+                            "filter": "datum.Year == 2021"
+                        }
+                    ],
+                    "encoding": {
+                        "y": {
+                            "aggregate": "mean",
+                            "field": "Life Expectancy",
+                            "title": "Life Expectancy"
+                        },
+                        "color": {
+                            "value": "blue"
+                        },
+                        "size": {
+                            "value": 4
+                        }
+                    }
+                },
+                {
+                    "mark": {
+                        "type": "text",
+                        "align": "right",
+                        "baseline": "bottom",
+                        "dx": -120,
+                        "dy": -70,
+                        "x": "width",
+                        "text": "Global Average of Life Expectancy",
+                        "font": "Rockwell",
+                        "size": 14
+                    }
+                }
+            ]
+        },
+        {
+            "width": 368,
+            "height": 370,
+            "title": {
+                "text": "Death Rates",
+                "fontSize": 25,
+                "font": "Rockwell",
+                "subtitle": "per 100 People",
+                "subtitleFont": "Rockwell",
+                "subtitleFontSize": 18
+            },
+            "data": {
+                "url": "https://raw.githubusercontent.com/vlay0005/Assignment_2/main/data/Global%20Population%20Trends(2016-2022).csv"
+            },
+            "transform": [
+                {
+                    "filter": {
+                        "field": "Country",
+                        "oneOf": [
+                            "British Virgin Islands",
+                            "China",
+                            "Gibraltar",
+                            "India",
+                            "Indonesia",
+                            "Nauru",
+                            "Pakistan",
+                            "St. Martin (French Part)",
+                            "Tuvalu",
+                            "United States of America"
+                        ]
+                    }
+                }
+            ],
+            "encoding": {
+                "x": {
+                    "field": "Year",
+                    "type": "ordinal"
+                },
+                "y": {
+                    "field": "Death Rate",
+                    "type": "quantitative"
+                },
+                "color": {
+                    "condition": {
+                        "param": "click",
+                        "field": "Country",
+                        "type": "nominal"
+                    },
+                    "value": "lightgrey"
+                }
+            },
+            "layer": [
+                {
+                    "mark": "line"
+                },
+                {
+                    "mark": {
+                        "type": "line",
+                        "point": true
+                    },
+                    "encoding": {
+                        "tooltip": [
+                            {
+                                "field": "Country",
+                                "type": "nominal",
+                                "title": "Country"
+                            },
+                            {
+                                "field": "Year",
+                                "type": "ordinal",
+                                "title": "Year"
+                            },
+                            {
+                                "field": "Death Rate",
+                                "type": "quantitative",
+                                "title": "Death Rate"
+                            },
+                            {
+                                "field": "Total_Population",
+                                "type": "quantitative",
+                                "title": "Total Population",
+                                "format": ","
+                            }
+                        ]
+                    },
+                    "selection": {
+                        "click": {
+                            "encodings": [
+                                "color"
+                            ],
+                            "type": "multi"
+                        }
+                    }
+                },
+                {
+                    "mark": {
+                        "type": "text",
+                        "size": 12,
+                        "font": "Rockwell"
+                    },
+                    "encoding": {
+                        "x": {
+                            "value": 190
+                        },
+                        "y": {
+                            "value": 250
+                        },
+                        "color":{"value":"black"},
+                        "text": {
+                            "value": [
+                                "Lowest death rate despite",
+                                "being one of the least populated countries"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "mark": {
+                        "type": "text",
+                        "size": 12,
+                        "font": "Rockwell"
+                    },
+                    "encoding": {
+                        "x": {
+                            "value": 240
+                        },
+                        "y": {
+                            "value": 190
+                        },
+                        "color":{"value": "black"},
+                        "text": {
+                            "value": [
+                                "For a lot of countries",
+                                "the death rate remains the same"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "mark": {
+                        "type": "text",
+                        "size": 12,
+                        "font": "Rockwell"
+                    },
+                    "encoding": {
+                        "x": {
+                            "value": 180
+                        },
+                        "y": {
+                            "value": 20
+                        },
+                        "color":{"value": "black"},
+                        "text": {
+                            "value": [
+                                "A most populated and a least populated country",
+                                "have the top highest death rates"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "width": 355,
+            "height": 370,
+            "title": {
+                "text": "Birth Rates",
+                "fontSize": 25,
+                "font": "Rockwell",
+                "subtitle": "per 1000 People",
+                "subtitleFont": "Rockwell",
+                "subtitleFontSize": 18
+            },
+            "data": {
+                "url": "https://raw.githubusercontent.com/vlay0005/Assignment_2/main/data/Global%20Population%20Trends(2016-2022).csv"
+            },
+            "layer": [
+                {
+                    "transform": [
+                        {
+                            "filter": "datum.Birth_Rate > 0"
+                        },
+                        {
+                            "filter": "datum.Fertility_Rate > 0"
+                        },
+                        {
+                            "filter": "datum.Year == 2021"
+                        },
+                        {
+                            "window": [
+                                {
+                                    "op": "rank",
+                                    "as": "rank"
+                                }
+                            ],
+                            "sort": [
+                                {
+                                    "field": "Total_Population",
+                                    "order": "descending"
+                                }
+                            ]
+                        },
+                        {
+                            "joinaggregate": [
+                                {
+                                    "op": "max",
+                                    "field": "rank",
+                                    "as": "total"
+                                }
+                            ]
+                        },
+                        {
+                            "filter": "(datum.rank > datum.total - 5) || (datum.rank <= 5)"
+                        }
+                    ],
+                    "mark": {
+                        "type": "circle",
+                        "opacity": 0.75
+                    },
+                    "encoding": {
+                        "x": {
+                            "field": "Birth_Rate",
+                            "type": "quantitative",
+                            "title": "Birth Rate"
+                        },
+                        "y": {
+                            "field": "Fertility_Rate",
+                            "type": "quantitative",
+                            "title": "Fertility Rate"
+                        },
+                        "color": {
+                            "condition": {
+                                "selection": "click",
+                                "field": "Country",
+                                "type": "nominal"
+                            },
+                            "value": "lightgrey"
+                        },
+                        "size": {
+                            "field": "Total_Population",
+                            "type": "quantitative",
+                            "aggregate": "max",
+                            "scale": {
+                                "type": "threshold",
+                                "domain": [
+                                    1000000,
+                                    100000000,
+                                    200000000,
+                                    500000000,
+                                    1000000000
+                                ],
+                                "range": [
+                                    90,
+                                    300,
+                                    600,
+                                    1200,
+                                    2000,
+                                    3000
+                                ]
+                            },
+                            "legend": {
+                                "title": "Total Population",
+                                "format": ".1s"
+                            }
+                        },
+                        "tooltip": [
+                            {
+                                "field": "Country",
+                                "type": "nominal",
+                                "title": "Country"
+                            },
+                            {
+                                "field": "Total_Population",
+                                "type": "ordinal",
+                                "title": "Total Population",
+                                "format": ","
+                            },
+                            {
+                                "field": "Birth_Rate",
+                                "type": "quantitative",
+                                "title": "Birth Rate"
+                            },
+                            {
+                                "field": "Fertility_Rate",
+                                "type": "quantitative",
+                                "title": "Fertility Rate"
+                            }
+                        ]
+                    },
+                    "selection": {
+                        "click": {
+                            "encodings": [
+                                "color"
+                            ],
+                            "type": "multi"
+                        }
+                    }
+                },
+                {
+                    "mark": {
+                        "type": "rule",
+                        "strokeDash": [
+                            4,
+                            4
+                        ],
+                        "size": 3
+                    },
+                    "encoding": {
+                        "x": {
+                            "aggregate": "mean",
+                            "field": "Birth_Rate"
+                        },
+                        "color": {
+                            "value": "blue"
+                        },
+                        "size": {
+                            "value": 4
+                        }
+                    }
+                },
+                {
+                    "mark": {
+                        "type": "text",
+                        "align": "right",
+                        "baseline": "bottom",
+                        "dx": -130,
+                        "dy": -60,
+                        "x": "width",
+                        "text": "Global Average of Births",
+                        "font": "Rockwell",
+                        "size": 14
+                    }
+                }
+            ]
+        }
+    ]
+}

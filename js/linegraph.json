@@ -25,7 +25,6 @@
             }
         }
     ],
-    "mark": {"type": "line", "point": true},
     "encoding": {
         "x": {
             "field": "Year",
@@ -36,30 +35,91 @@
             "type": "quantitative"
         },
         "color": {
-            "field": "Country",
-            "type": "nominal"
-        },
-        "tooltip": [
-            {
+            "condition": {
+                "param": "click",
                 "field": "Country",
-                "type": "nominal",
-                "title": "Country"
+                "type": "nominal"
             },
-            {
-                "field": "Year",
-                "type": "ordinal",
-                "title": "Year"
+            "value": "lightgrey"
+        }
+    },
+    "layer": [
+        {
+            "mark": "line"
+        },
+        {
+            "mark": {
+                "type": "line",
+                "point": true
             },
-            {
-                "field": "Death Rate",
-                "type": "quantitative",
-                "title": "Death Rate"
+            "encoding": {
+                "tooltip": [
+                    {
+                        "field": "Country",
+                        "type": "nominal",
+                        "title": "Country"
+                    },
+                    {
+                        "field": "Year",
+                        "type": "ordinal",
+                        "title": "Year"
+                    },
+                    {
+                        "field": "Death Rate",
+                        "type": "quantitative",
+                        "title": "Death Rate"
+                    },
+                    {
+                        "field": "Total_Population",
+                        "type": "quantitative",
+                        "title": "Total Population",
+                        "format": ","
+                    }
+                ]
             },
-            {
-                "field": "Total_Population",
-                "type": "quantitative",
-                "title": "Total Population"
+            "selection": {
+                "click": {
+                    "encodings": [
+                        "color"
+                    ],
+                    "type": "multi"
+                }
             }
-        ]
-    }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "size": 12,
+                "color": "black"
+            },
+            "encoding": {
+                "x": {
+                    "value": 350
+                },
+                "y": {
+                    "value": 270
+                },
+                "text": {
+                    "value": "Lowest death rate despite being one of the least populated countries"
+                }
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "size": 12
+            },
+            "encoding": {
+                "x": {
+                    "value": 350
+                },
+                "y": {
+                    "value": 210
+                },
+                "text": {
+                    "value": "For a lot of countries the death rate remains the same"
+                }
+            }
+        }
+    ]
 }
